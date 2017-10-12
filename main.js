@@ -16,27 +16,43 @@ Vue.component('tabs', {
 
 	data() {
 		return {
-			tabs: []
+			tabs: [],
+			selectedTab: null
 		}
 	},
 
-	created() {
+	mounted() {
 		this.tabs = this.$children;
+
+		// Loop throgh tabs and cache the selected one.
+		for(const tab of this.tabs) {
+			console.log(tab.isActive);
+			if(tab.isActive) {
+				this.selectedTab = tab;
+			}
+		}
+
+		// If there is not a predefined selected tab,
+		// set the first one to be selected
+		if(!this.selectedTab) {
+			this.selectedTab = this.tabs[0];
+			this.selectedTab.isActive = true;
+		}
 	},
 
 	methods: {
 		selectTab(clickedTab) {
-			this.tabs.forEach(tab => {
-				tab.isActive = (tab.name == clickedTab.name)
-			});
-		}
+			// unselect old tab and select clicked tab
+			[this.selectedTab.isActive, clickedTab.isActive] = [false, true];
+			this.selectedTab = clickedTab;
+		},
 	}
 });
 
 Vue.component('tab', {
 	props: {
-		name: {required: true},
-		selected: {default: false}
+		name: { required: true },
+		selected: { default: false }
 	},
 
 	template: `<div v-show="isActive ">
