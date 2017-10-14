@@ -4,16 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="/css/app.css">
 	<title>Document</title>
 </head>
 <body>
 
-	<div id="root">
-	
+	<div id="app">
+		<notification></notification>
 	</div>
 	
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script src="https://unpkg.com/vue@2.5.1/dist/vue.js"></script>
+	<script src="/js/manifest.js"></script>
+	<script src="/js/vendor.js"></script>
 	<script src="/js/app.js"></script>
 </body>
 </html>
