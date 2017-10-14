@@ -10,13 +10,8 @@
 <body>
 
 	@verbatim
-		<div id="one">
-			<h1>{{ shared.user.name }}</h1>
-			<p>{{ foo }}</p>
-		</div>
-		<div id="two">
-			<h1>{{ shared.user.name }}</h1>
-			<p>{{ foo }}</p>
+		<div id="app">
+			<coupon v-model="couponCode">
 		</div>
 	@endverbatim
 	<script src="{{ mix('/js/manifest.js') }}"></script>

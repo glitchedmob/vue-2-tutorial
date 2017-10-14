@@ -1,28 +1,13 @@
 import Vue from 'vue';
-import Notification from './components/Notification.vue'
 
-let store = {
-	user: {
-		name: 'John Doe'
-	}
-}
-
-window.store = store;
+import Coupon from './components/Coupon.vue';
 
 new Vue({
-	el: '#one',
+	el: '#app',
+
+	components: { Coupon },
 
 	data:  {
-		foo: 'bar',
-		shared: store
-	}
-});
-
-new Vue({
-	el: '#two',
-
-	data: {
-		foo: 'other',
-		shared: store
+		couponCode: 'COUPON-CODE'
 	}
 });
