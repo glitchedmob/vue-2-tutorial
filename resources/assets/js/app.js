@@ -1,13 +1,12 @@
 import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-import Coupon from './components/Coupon.vue';
+import router from './routes';
+
+Vue.use(VueRouter);
 
 new Vue({
 	el: '#app',
 
-	components: { Coupon },
-
-	data:  {
-		couponCode: 'COUPON-CODE'
-	}
+	router
 });
