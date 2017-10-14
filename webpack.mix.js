@@ -11,9 +11,12 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
+mix
+	.sourceMaps()
+	.version([])
+	.js('resources/assets/js/app.js', 'public/js')
 	.extract(['vue'])
 	.sass('resources/assets/sass/app.scss', 'public/css')
 	.options({
-		extractVueStyles: true
+		extractVueStyles: 'public/css/vue.css'
 	});
