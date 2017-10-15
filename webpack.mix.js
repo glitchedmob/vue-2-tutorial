@@ -15,7 +15,7 @@ mix
 	.sourceMaps()
 	.version([])
 	.js('resources/assets/js/app.js', 'public/js')
-	.extract(['axios', 'vue', 'vue-router'])
+	.extract(['axios', 'moment', 'vue', 'vue-router'])
 	.sass('resources/assets/sass/app.scss', 'public/css')
 	.options({
 		extractVueStyles: 'public/css/vue.css'
